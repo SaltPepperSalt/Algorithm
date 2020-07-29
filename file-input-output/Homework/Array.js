@@ -79,12 +79,27 @@ class ArrayList {
   }
 }
 
-const arrayList = new ArrayList(10);
-arrayList.print();
-console.log(arrayList.isEmpty());
-arrayList.prepend(10);
-arrayList.prepend(11);
-arrayList.prepend(12);
-arrayList.remove(1);
-arrayList.print();
-console.log(arrayList.access(0));
+myList = new ArrayList(8);
+myList.print();
+
+for (let i = 0; i < 10; i++) {
+  myList.append(i + 1);
+}
+myList.print();
+
+for (let i = 0; i < 10; i++) {
+  myList.prepend(i + 1);
+}
+myList.print();
+
+const value = myList.access(3);
+console.log(`myList.access(3) = ${value}`);
+
+myList.insert(8, 128);
+myList.print();
+
+myList.remove(4);
+myList.print();
+
+myList.setHead(10);
+myList.print();
