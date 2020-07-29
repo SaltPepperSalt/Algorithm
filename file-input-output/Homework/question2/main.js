@@ -18,15 +18,21 @@ function readTestFile(fileName) {
   return [parsedInput]
 }
 
-function solution(x) {
-  const stringX = x + '';
-  let numberSum = 0;
-  let answer = true;
-  for (let i = 0; i < stringX.length; i++) {
-    numberSum += (+stringX[i]);
+function solution(num) {
+  let answer = 0;
+  while (num !== 1) {
+    if (answer > 500) {
+      answer = -1;
+      break;
+    }
+    answer += 1;
+    if (num % 2) {
+      num = num * 3 + 1;
+    } else {
+      num = num / 2;
+    }
   }
-  answer = x % numberSum ? false : true;
-  return answer
+  return answer;
 }
 
 fs.readdir(pathDir, (err, files) => {

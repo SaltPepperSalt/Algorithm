@@ -18,14 +18,14 @@ function readTestFile(fileName) {
   return [parsedInput]
 }
 
-function solution(x) {
-  const stringX = x + '';
-  let numberSum = 0;
+function solution(num) {
+  const stringNumber = num + '';
+  let digitSum = 0;
   let answer = true;
-  for (let i = 0; i < stringX.length; i++) {
-    numberSum += (+stringX[i]);
+  for (let i = 0; i < stringNumber.length; i++) {
+    digitSum += (+stringNumber[i]);
   }
-  answer = x % numberSum ? false : true;
+  answer = num % digitSum ? false : true;
   return answer
 }
 
